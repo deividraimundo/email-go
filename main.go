@@ -12,14 +12,13 @@ import (
 	gomail "gopkg.in/mail.v2"
 )
 
-// PRIMEIRA FORMA DE ENVIAR UM EMAIL
-
 func main() {
 	EnviaMail1()
 	EnviaMail2()
 	EnviaMail3()
 }
 
+// PRIMEIRA FORMA DE ENVIAR UM EMAIL
 // Enviando e-mail sem biblioteca
 func EnviaMail1() {
 	err := godotenv.Load()
@@ -50,6 +49,9 @@ func EnviaMail1() {
 	fmt.Println("Sucesso ao enviar e-mail!")
 }
 
+//
+//
+// SEGUNDA FORMA DE ENVIAR UM EMAIL
 // Enviando e-mail com biblioteca - VAI PARA SPAM
 func EnviaMail2() {
 	err := godotenv.Load()
@@ -76,6 +78,9 @@ func EnviaMail2() {
 	fmt.Println("Sucesso ao enviar e-mail!")
 }
 
+//
+//
+// TERCEIRA FORMA DE ENVIAR UM EMAIL
 // Enviando e-mail através de HTML
 func EnviaMail3() {
 	err := godotenv.Load()
