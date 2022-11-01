@@ -29,10 +29,10 @@ func EnviaMail1() {
 	from := os.Getenv("MAIL")       // Quem está enviando
 	password := os.Getenv("PASSWD") // Senha de que está enviando
 
-	toList := []string{"deivid.raimundo@hotmail.com"} // Quem vai receber
+	toList := []string{"email@email.com"} // Quem vai receber
 
-	host := "smtp.aswti.com.br" // Servidor
-	port := "587"               // Porta
+	host := "smtp" // Servidor
+	port := "porta"               // Porta
 
 	msg := "Deu certo 1" // Mensagem
 
@@ -61,12 +61,12 @@ func EnviaMail2() {
 
 	m := gomail.NewMessage()
 
-	m.SetHeader("From", "deivid.raimundo@awsti.com.br") // Quem enviará
-	m.SetHeader("To", "deivid.raimundo@hotmail.com")    // Quem receberá
+	m.SetHeader("From", "email@email.com") // Quem enviará
+	m.SetHeader("To", "email@email.com")    // Quem receberá
 	m.SetHeader("Subject", "Gomail teste")              // Assunto
 	m.SetBody("text/plain", "Deu certo 2")              // Mensagem
 
-	d := gomail.NewDialer("smtp.aswti.com.br", 587, os.Getenv("MAIL"), os.Getenv("PASSWD"))
+	d := gomail.NewDialer("smtp", porta, os.Getenv("MAIL"), os.Getenv("PASSWD"))
 
 	d.TLSConfig = &tls.Config{InsecureSkipVerify: true}
 
@@ -92,11 +92,11 @@ func EnviaMail3() {
 	password := os.Getenv("PASSWD") // Senha de quem está enviando
 
 	to := []string{ // Quem vai receber
-		"deivid.raimundo@hotmail.com",
+		"email@email.com",
 	}
 
-	smtpHost := "smtp.aswti.com.br" // Servidor
-	smtpPort := "587"               // Porta
+	smtpHost := "smtp" // Servidor
+	smtpPort := "porta"               // Porta
 
 	auth := smtp.PlainAuth("", from, password, smtpHost) // Authentication
 
